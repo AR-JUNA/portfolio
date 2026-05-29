@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Arjuna Caleb Gyan – Software Engineer | NPCC Mauritius 2026 Finalist | Open for 6-month Internship"/>
+<title>Arjuna Gyan | Software Engineer</title>
+
+<!-- Favicon -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2327c96e'/><stop offset='100%25' stop-color='%2318a355'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text y='.9em' font-size='62' font-family='Montserrat,Arial,sans-serif' font-weight='900' fill='white' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='12'>AG</text></svg>"/>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"/>
+
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ============================== NAVBAR ============================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">Arjuna<span>.</span></a>
+    <div class="nav-links">
+      <a href="#hero"           class="nav-link active">Home</a>
+      <a href="#about"          class="nav-link">About</a>
+      <a href="#skills"         class="nav-link">Skills</a>
+      <a href="#services"       class="nav-link">Services</a>
+      <a href="#projects"       class="nav-link">Projects</a>
+      <a href="#resume"         class="nav-link">Resume</a>
+      <a href="#certifications" class="nav-link">Certs</a>
+      <a href="#downloads"      class="nav-link">Downloads</a>
+      <a href="#contact"        class="nav-link">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#hero"           onclick="closeMenu()">Home</a>
+  <a href="#about"          onclick="closeMenu()">About</a>
+  <a href="#skills"         onclick="closeMenu()">Skills</a>
+  <a href="#services"       onclick="closeMenu()">Services</a>
+  <a href="#projects"       onclick="closeMenu()">Projects</a>
+  <a href="#resume"         onclick="closeMenu()">Resume</a>
+  <a href="#certifications" onclick="closeMenu()">Certifications</a>
+  <a href="#downloads"      onclick="closeMenu()">Downloads</a>
+  <a href="#contact"        onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ============================== HERO ============================== -->
+<section id="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+
+      <span class="hero-eyebrow">Welcome to my portfolio</span>
+      <h1 class="hero-title">I'm <span>Arjuna</span> Gyan</h1>
+      <p class="hero-role">
+        I'm a
+        <span id="typed-text"></span>
+      </p>
+      <p class="hero-desc">
+        Junior Software Engineer &amp; NPCC Mauritius 2026 Finalist. Passionate about
+        building AI-driven solutions, fintech products, and accessible web experiences.
+        Currently based in Pamplemousses, Mauritius 🇲🇺
+      </p>
+      <div class="hero-btns">
+        <a href="images/resume.pdf" download class="btn btn-green">
+          <i class="fas fa-download"></i> Download CV
+        </a>
+        <a href="#contact" class="btn btn-outline-white">
+          <i class="fas fa-paper-plane"></i> Get In Touch
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- wave bottom -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============================== ABOUT ============================== -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Left: profile photo -->
+      <div class="reveal-l">
+        <div class="about-img-wrap">
+          <img
+            src="images/profile.jpg"
+            alt="Arjuna Caleb Gyan"
+            class="about-img"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <!-- fallback shown when profile.jpg is missing -->
+          <div class="about-img about-img-fallback" style="display:none;">AG</div>
+          <div class="about-img-border"></div>
+        </div>
+      </div>
+      <!-- Right: info -->
+      <div class="reveal-r">
+        <div class="section-heading" style="text-align:left;margin-bottom:28px;">
+          <h2>About Me</h2>
+          <div class="divider" style="margin:14px 0 0;"></div>
+        </div>
+        <div class="about-text">
+          <p>I'm a junior software engineer with a strong foundation in web development and a growing expertise in AI-driven solutions. I combine technical skills with a product-thinking mindset developed through real internship experience at PARKLY Innovations Limited.</p>
+          <p>As a <strong>2026 NPCC Mauritius Finalist</strong>, I pitched an AI-based concept for Efficient Businesses &amp; Smart Cities — a testament to my ability to bridge technology and real-world impact. Currently seeking a <strong>6-month internship</strong> where I can contribute meaningfully.</p>
+          <hr/>
+          <div class="about-info-title">Basic Info</div>
+          <ul class="info-list">
+            <li><span class="lbl">Name:</span> Arjuna Caleb Gyan</li>
+            <li><span class="lbl">Location:</span> Pamplemousses, Mauritius 🇲🇺</li>
+            <li><span class="lbl">Email:</span> <a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a></li>
+            <li><span class="lbl">Phone:</span> <a href="tel:+23055198492">+230 5519 8492</a></li>
+            <li><span class="lbl">Degree:</span> BSc. Software Engineering</li>
+            <li><span class="lbl">School:</span> ALCHE, Mauritius</li>
+            <li><span class="lbl">Languages:</span> Twi (Native) · English · French</li>
+            <li><span class="lbl">Availability:</span> Open for 6-month internship</li>
+          </ul>
+          <span class="avail-pill"><span class="avail-dot"></span>Available for Internship (6 months)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SKILLS ============================== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>My <span>Skills</span></h2>
+      <div class="divider"></div>
+      <p>A blend of engineering fundamentals, modern web development, data science, and product thinking.</p>
+    </div>
+
+    <!-- skill bars -->
+    <div class="skills-bars reveal" id="skillBars">
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">JavaScript, HTML &amp; CSS</span><span class="skill-pct">95%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">Python &amp; C++</span><span class="skill-pct">65%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">Git &amp; Version Control</span><span class="skill-pct">75%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">Debugging &amp; Testing</span><span class="skill-pct">70%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="70"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">REST API &amp; MySQL</span><span class="skill-pct">60%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">Object-Oriented Programming</span><span class="skill-pct">65%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">Data Structures &amp; Algorithms</span><span class="skill-pct">50%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="50"></div></div>
+      </div>
+      <div class="skill-row">
+        <div class="skill-meta"><span class="skill-name">AWS Cloud</span><span class="skill-pct">40%</span></div>
+        <div class="skill-track"><div class="skill-fill" data-w="40"></div></div>
+      </div>
+    </div>
+
+    <!-- soft skills + tools -->
+    <div class="soft-section reveal">
+      <h3><i class="fas fa-handshake" style="color:var(--green);margin-right:8px;"></i>Soft Skills &amp; Tools</h3>
+      <div class="chips">
+        <span class="chip"><i class="fas fa-users"></i>Team Collaboration</span>
+        <span class="chip"><i class="fas fa-comments"></i>Communication</span>
+        <span class="chip"><i class="fas fa-handshake"></i>Stakeholder Engagement</span>
+        <span class="chip"><i class="fas fa-sync-alt"></i>Agile Collaboration</span>
+        <span class="chip"><i class="fas fa-lightbulb"></i>Problem Solving</span>
+        <span class="chip"><i class="fas fa-chart-line"></i>Market Research</span>
+        <span class="chip"><i class="fab fa-github"></i>GitHub</span>
+        <span class="chip"><i class="fab fa-python"></i>Python</span>
+        <span class="chip"><i class="fab fa-js"></i>JavaScript</span>
+        <span class="chip"><i class="fab fa-html5"></i>HTML5</span>
+        <span class="chip"><i class="fab fa-css3-alt"></i>CSS3</span>
+        <span class="chip"><i class="fab fa-aws"></i>AWS</span>
+        <span class="chip"><i class="fas fa-database"></i>MySQL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== SERVICES ============================== -->
+<section id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>What I <span>Offer</span></h2>
+      <div class="divider"></div>
+      <p>I bring a mix of technical execution and strategic product thinking to every project I work on.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h5>Web Development</h5>
+        <p>Building responsive, performant web applications using modern JavaScript, HTML5 &amp; CSS3. From landing pages to full-stack apps.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.08s">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <h5>AI-Driven Solutions</h5>
+        <p>Designing and prototyping AI-based business concepts and smart automation tools, as showcased in the NPCC 2026 challenge.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.16s">
+        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+        <h5>Data Analytics</h5>
+        <p>Creating dashboards, analytics pipelines, and reports using Python, SQL, and visualisation libraries for actionable insights.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.24s">
+        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h5>Product Management</h5>
+        <p>End-to-end product lifecycle: market research, roadmap planning, stakeholder coordination, and investor-facing materials.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.32s">
+        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+        <h5>UI/UX Design</h5>
+        <p>User-centred interface design with a focus on accessibility and intuitive flows, grounded in Meta's UX/UI design principles.</p>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.4s">
+        <div class="service-icon"><i class="fas fa-handshake"></i></div>
+        <h5>Freelance Dev &amp; Consulting</h5>
+        <p>Helping small businesses and startups define and build their digital products iteratively, reducing rework through continuous feedback.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== STATS ============================== -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <i class="fas fa-folder-open"></i>
+        <div class="stat-num"><span id="c1" data-target="6">0</span><span>+</span></div>
+        <div class="stat-lbl">Projects Built</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:.08s">
+        <i class="fas fa-users"></i>
+        <div class="stat-num"><span id="c2" data-target="5">0</span><span>+</span></div>
+        <div class="stat-lbl">Clients Served</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:.16s">
+        <i class="fas fa-certificate"></i>
+        <div class="stat-num"><span id="c3" data-target="8">0</span></div>
+        <div class="stat-lbl">Certifications</div>
+      </div>
+      <div class="stat-item reveal" style="transition-delay:.24s">
+        <i class="fas fa-trophy"></i>
+        <div class="stat-num"><span>$</span><span id="c4" data-target="7">0</span><span>K+</span></div>
+        <div class="stat-lbl">Funds Raised</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PROJECTS ============================== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>My <span>Projects</span></h2>
+      <div class="divider"></div>
+      <p>From fintech dashboards to AI concepts and education platforms — here's what I've shipped.</p>
+    </div>
+    <!-- Filter -->
+    <div class="proj-filter reveal">
+      <button class="proj-filter-btn active" data-f="all">All</button>
+      <button class="proj-filter-btn" data-f="fintech">Fintech</button>
+      <button class="proj-filter-btn" data-f="webdev">Web Dev</button>
+      <button class="proj-filter-btn" data-f="aiml">AI / ML</button>
+      <button class="proj-filter-btn" data-f="education">Education</button>
+      <button class="proj-filter-btn" data-f="product">Product</button>
+    </div>
+    <!-- Grid -->
+    <div class="proj-grid reveal" style="transition-delay:.1s">
+
+      <!-- PROJECT 1: MoMo Dashboard -->
+      <div class="proj-card" data-cat="fintech">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+          <img src="images/proj-momo.jpg" alt="MoMo Dashboard screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">💳</span>
+          <span class="proj-cat-tag">Fintech</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="https://github.com/arjunagyan" target="_blank">MoMo Transaction Analytics Dashboard</a></div>
+          <div class="proj-sub">Real-time mobile money dashboard — filtering, tracking &amp; anomaly reporting.</div>
+          <div class="proj-tags">
+            <span class="ptag">JavaScript</span>
+            <span class="ptag">REST API</span>
+            <span class="ptag">Charts.js</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: TechPath Finder -->
+      <div class="proj-card" data-cat="webdev">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
+          <img src="images/proj-techpath.jpg" alt="TechPath Finder screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">🧭</span>
+          <span class="proj-cat-tag">Web Dev</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="https://github.com/arjunagyan" target="_blank">TechPath Finder</a></div>
+          <div class="proj-sub">Interactive career assessment platform with dynamic quiz logic and personalised recommendations.</div>
+          <div class="proj-tags">
+            <span class="ptag">HTML5</span>
+            <span class="ptag">CSS3</span>
+            <span class="ptag">JavaScript</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+            <a href="#" target="_blank" class="proj-btn proj-btn-live">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Edu Access -->
+      <div class="proj-card" data-cat="education">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#fde8ff,#f5d0fe);">
+          <img src="images/proj-eduaccess.jpg" alt="Edu Access screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">📚</span>
+          <span class="proj-cat-tag">Education</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="https://github.com/arjunagyan" target="_blank">Edu Access</a></div>
+          <div class="proj-sub">Accessibility-focused educational landing page for a non-profit — lowering barriers to quality learning.</div>
+          <div class="proj-tags">
+            <span class="ptag">HTML5</span>
+            <span class="ptag">Accessibility</span>
+            <span class="ptag">Non-profit</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+            <a href="#" target="_blank" class="proj-btn proj-btn-live">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: NPCC AI Concept -->
+      <div class="proj-card" data-cat="aiml">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">
+          <img src="images/proj-npcc.jpg" alt="NPCC AI Concept screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">🤖</span>
+          <span class="proj-cat-tag">AI / ML</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="#">AI Business Concept — NPCC 2026</a></div>
+          <div class="proj-sub">AI solution for Efficient Businesses &amp; Smart Cities. Finalist in the NPCC Mauritius Challenge 2026. 🏆</div>
+          <div class="proj-tags">
+            <span class="ptag">AI Strategy</span>
+            <span class="ptag">Smart Cities</span>
+            <span class="ptag">Innovation</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+            <span class="proj-btn proj-btn-locked" title="Internal project">
+              <i class="fas fa-lock"></i> Private
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5: CWAS -->
+      <div class="proj-card" data-cat="aiml">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">
+          <img src="images/proj-cwas.jpg" alt="CWAS AIE Startups screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">🚀</span>
+          <span class="proj-cat-tag">AI / ML</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="#">CWAS — AIE Startups</a></div>
+          <div class="proj-sub">Certificate of Achievement project — AI applications for boosting NexGen Entrepreneurs.</div>
+          <div class="proj-tags">
+            <span class="ptag">AI</span>
+            <span class="ptag">Entrepreneurship</span>
+            <span class="ptag">Research</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 6: PARKLY -->
+      <div class="proj-card" data-cat="product">
+        <div class="proj-thumb" style="background:linear-gradient(135deg,#ccfbf1,#99f6e4);">
+          <img src="images/proj-parkly.jpg" alt="PARKLY Parking Platform screenshot"
+               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+          <span class="proj-emoji">🅿️</span>
+          <span class="proj-cat-tag">Product</span>
+          <div class="proj-overlay">
+            <a href="https://github.com/arjunagyan" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title"><a href="#">PARKLY — Parking Tech Platform</a></div>
+          <div class="proj-sub">Led UX research &amp; reservation flow improvements. Raised $7K+ in investor funding.</div>
+          <div class="proj-tags">
+            <span class="ptag">Product Mgmt</span>
+            <span class="ptag">UX Research</span>
+            <span class="ptag">Stakeholders</span>
+          </div>
+          <div class="proj-actions">
+            <a href="https://github.com/arjunagyan" target="_blank" class="proj-btn proj-btn-gh">
+              <i class="fab fa-github"></i> GitHub Repo
+            </a>
+            <span class="proj-btn proj-btn-locked" title="NDA — internal product">
+              <i class="fas fa-lock"></i> Internal
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== RESUME / TIMELINE ============================== -->
+<section id="resume">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>My <span>Resume</span></h2>
+      <div class="divider"></div>
+      <p>Education background and professional experience that shaped who I am today.</p>
+    </div>
+    <div class="resume-grid">
+      <!-- Education -->
+      <div class="reveal-l">
+        <div class="resume-col-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">2025 – Present</span>
+            <div class="tl-title">BSc. Software Engineering</div>
+            <div class="tl-org">African Leadership College of Higher Education (ALCHE) · Mauritius</div>
+            <div class="tl-body">Currently studying software engineering with focus on web technologies, algorithms, and product development.</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">2026 – Completed</span>
+            <div class="tl-title">Diploma – Data Science</div>
+            <div class="tl-org">WorldQuant University · Remote</div>
+            <div class="tl-body">Applied Data Science Lab covering data wrangling, statistical modelling, ML pipelines, and visualisation.</div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">Completed</span>
+            <div class="tl-title">Diploma – Software Engineering</div>
+            <div class="tl-org">IPMC University College · Ghana</div>
+            <div class="tl-body">Foundation in software development, OOP, databases, and systems design.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Experience -->
+      <div class="reveal-r">
+        <div class="resume-col-title"><i class="fas fa-briefcase"></i> Experience</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">Jul – Dec 2025</span>
+            <div class="tl-title">Product Manager Intern</div>
+            <div class="tl-org">PARKLY Innovations Limited</div>
+            <div class="tl-body">
+              <ul>
+                <li>Market research &amp; business validation for parking tech platform</li>
+                <li>Investor fundraising support — over <strong>$7,000 raised</strong></li>
+                <li>Stakeholder coordination with La Plage Factory and partners</li>
+                <li>Platform optimisation → <strong>40% increase</strong> in user engagement</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">May – Sep 2025</span>
+            <div class="tl-title">Software Developer (Freelance)</div>
+            <div class="tl-org">Self-employed</div>
+            <div class="tl-body">
+              <ul>
+                <li>Collaborated with 5+ clients to define product requirements</li>
+                <li>Built responsive web apps with Python, JS, HTML/CSS &amp; C++</li>
+                <li>Reduced rework by <strong>40%</strong> via iterative feedback loops</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tl-item">
+            <span class="tl-dot"></span>
+            <span class="tl-date">Mar 2026 – Present</span>
+            <div class="tl-title">Secretary — Investment Society</div>
+            <div class="tl-org">ALCHE Wall Street Investment Society</div>
+            <div class="tl-body">
+              <ul>
+                <li>Facilitated 10+ investment sessions for 35+ students</li>
+                <li>Topics: venture capital, financial markets, startup evaluation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CERTIFICATIONS ============================== -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>Credentials &amp; <span>Certifications</span></h2>
+      <div class="divider"></div>
+      <p>Continuous learning across AI, data science, cloud, and UX design.</p>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card featured reveal">
+        <div class="cert-icon">🏆</div>
+        <div class="cert-org">NPCC Mauritius</div>
+        <div class="cert-title">Certificate of Achievement — CWAS / AIE Startups: Boosting NexGen Entrepreneurs</div>
+        <div class="cert-date">May 2026</div>
+        <span class="cert-feat">⭐ Featured Award</span>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.06s">
+        <div class="cert-icon">📊</div>
+        <div class="cert-org">WorldQuant University</div>
+        <div class="cert-title">Applied Data Science Lab</div>
+        <div class="cert-date">2026</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.12s">
+        <div class="cert-icon">☁️</div>
+        <div class="cert-org">Amazon</div>
+        <div class="cert-title">Introduction to Software Development</div>
+        <div class="cert-date">Completed</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.18s">
+        <div class="cert-icon">🤖</div>
+        <div class="cert-org">ALX Africa</div>
+        <div class="cert-title">AICE — AI Career Essentials</div>
+        <div class="cert-date">Completed</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.24s">
+        <div class="cert-icon">🗄️</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-title">Databases and SQL for Data Science with Python</div>
+        <div class="cert-date">Completed</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.30s">
+        <div class="cert-icon">🎨</div>
+        <div class="cert-org">Meta</div>
+        <div class="cert-title">Principles of UX/UI Design</div>
+        <div class="cert-date">Completed</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.36s">
+        <div class="cert-icon">🧠</div>
+        <div class="cert-org">IBM</div>
+        <div class="cert-title">Generative AI for Data Engineering</div>
+        <div class="cert-date">Completed</div>
+      </div>
+      <div class="cert-card reveal" style="transition-delay:.42s">
+        <div class="cert-icon">⚡</div>
+        <div class="cert-org">Outskill</div>
+        <div class="cert-title">Generative AI Mastermind</div>
+        <div class="cert-date">Completed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== DOWNLOADS ============================== -->
+<section id="downloads">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>Download <span>Documents</span></h2>
+      <div class="divider"></div>
+      <p>Get Arjuna's CV and support letter — updated June 2026.</p>
+    </div>
+    <div class="downloads-grid">
+      <div class="dl-card reveal">
+        <div class="dl-icon-wrap"><i class="fas fa-file-pdf"></i></div>
+        <h4>Curriculum Vitae</h4>
+        <p>Full resume: education, experience, skills, projects &amp; certifications. Updated June 2026.</p>
+        <div class="dl-btns">
+          <a href="images/resume.pdf" target="_blank" class="btn btn-outline-green">
+            <i class="fas fa-eye"></i> View CV
+          </a>
+          <a href="images/resume.pdf" download class="btn btn-green">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+      <div class="dl-card reveal" style="transition-delay:.1s">
+        <div class="dl-icon-wrap" style="background:rgba(39,201,110,.1);"><i class="fas fa-file-alt" style="color:var(--green);"></i></div>
+        <h4>Support Letter</h4>
+        <p>Official academic support letter from ALCHE endorsing Arjuna's internship application.</p>
+        <div class="dl-btns">
+          <a href="images/support-letter.pdf" target="_blank" class="btn btn-outline-green">
+            <i class="fas fa-eye"></i> View Letter
+          </a>
+          <a href="images/support-letter.pdf" download class="btn btn-green">
+            <i class="fas fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:20px;font-size:.82rem;color:#999;">
+      <i class="fas fa-info-circle" style="color:var(--green);margin-right:4px;"></i>
+      To update, replace <code style="background:#f1f5f9;padding:2px 7px;border-radius:3px;font-size:.8em;">images/resume.pdf</code> and <code style="background:#f1f5f9;padding:2px 7px;border-radius:3px;font-size:.8em;">images/support-letter.pdf</code> with your real files.
+    </p>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIALS ============================== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-heading reveal" style="margin-bottom:50px;">
+      <h2 style="color:#fff;">What People <span>Say</span></h2>
+      <div class="divider"></div>
+      <p style="color:rgba(255,255,255,.6);">Feedback from colleagues, clients, and mentors.</p>
+    </div>
+  </div>
+  <div class="testi-track-wrap">
+    <div class="testi-track" id="testiTrack">
+      <!-- Set 1 -->
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Arjuna brought tremendous energy to our platform optimisation. His ability to coordinate stakeholders while shipping features is rare in someone so early in their career.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PM</div>
+          <div><div class="testi-name">Product Manager</div><div class="testi-role">PARKLY Innovations Limited</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The dashboard Arjuna built for our transaction analytics was clean, fast, and exactly what we needed. He understood our business requirements immediately.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CL</div>
+          <div><div class="testi-name">Fintech Client</div><div class="testi-role">Freelance Project</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">His NPCC presentation was one of the most polished and well-thought-out AI business concepts we saw. A true innovator with a global mindset.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JD</div>
+          <div><div class="testi-name">NPCC Judge</div><div class="testi-role">NPCC Mauritius 2026</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Arjuna helped our investment society members understand complex financial markets through clear, structured sessions. A natural educator and communicator.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AS</div>
+          <div><div class="testi-name">Society Member</div><div class="testi-role">ALCHE Wall Street Soc.</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The web app Arjuna delivered reduced our rework cycles significantly. His iterative approach and attention to feedback made the whole process smooth.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SM</div>
+          <div><div class="testi-name">Startup Founder</div><div class="testi-role">Freelance Client</div></div>
+        </div>
+      </div>
+      <!-- Duplicated set for seamless loop -->
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Arjuna brought tremendous energy to our platform optimisation. His ability to coordinate stakeholders while shipping features is rare in someone so early in their career.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">PM</div>
+          <div><div class="testi-name">Product Manager</div><div class="testi-role">PARKLY Innovations Limited</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The dashboard Arjuna built for our transaction analytics was clean, fast, and exactly what we needed. He understood our business requirements immediately.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CL</div>
+          <div><div class="testi-name">Fintech Client</div><div class="testi-role">Freelance Project</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">His NPCC presentation was one of the most polished and well-thought-out AI business concepts we saw. A true innovator with a global mindset.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JD</div>
+          <div><div class="testi-name">NPCC Judge</div><div class="testi-role">NPCC Mauritius 2026</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">Arjuna helped our investment society members understand complex financial markets through clear, structured sessions. A natural educator and communicator.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AS</div>
+          <div><div class="testi-name">Society Member</div><div class="testi-role">ALCHE Wall Street Soc.</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <p class="testi-text">The web app Arjuna delivered reduced our rework cycles significantly. His iterative approach and attention to feedback made the whole process smooth.</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SM</div>
+          <div><div class="testi-name">Startup Founder</div><div class="testi-role">Freelance Client</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== CONTACT ============================== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-heading reveal">
+      <h2>Get In <span>Touch</span></h2>
+      <div class="divider"></div>
+      <p>Have an internship opportunity, project idea, or just want to say hello? I'd love to hear from you.</p>
+    </div>
+    <div class="contact-grid">
+      <!-- Left info -->
+      <div class="reveal-l">
+        <h3>Contact Info</h3>
+        <div class="ci-item">
+          <div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="ci-lbl">Address</div>
+            <div class="ci-val">Pamplemousses, Mauritius 🇲🇺</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="ci-lbl">Phone / WhatsApp</div>
+            <div class="ci-val"><a href="tel:+23055198492">+230 5519 8492</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="ci-lbl">Email</div>
+            <div class="ci-val"><a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-ico"><i class="fas fa-calendar-check"></i></div>
+          <div>
+            <div class="ci-lbl">Availability</div>
+            <div class="ci-val" style="color:var(--green);font-weight:700;">Open for 6-month Internship</div>
+          </div>
+        </div>
+        <!-- Social -->
+        <div class="ci-lbl" style="margin-bottom:10px;">Follow Me</div>
+        <div class="social-row">
+          <a href="https://linkedin.com/in/arjunagyan" target="_blank" class="soc-btn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/arjunagyan"    target="_blank" class="soc-btn" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:a.gyan@alustudent.com"     class="soc-btn" title="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://wa.me/23055198492"         target="_blank" class="soc-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <!-- Right form -->
+      <div class="form-card reveal-r">
+        <!--
+          FORMSPREE SETUP — to receive contact messages at a.gyan@alustudent.com:
+          1. Go to https://formspree.io and sign up (free) with a.gyan@alustudent.com
+          2. Click "New Form" → name it "Portfolio Contact"
+          3. Copy the form ID (looks like: xabcdefg)
+          4. Replace YOUR_FORM_ID below with your real ID, e.g.:
+             action="https://formspree.io/f/xabcdefg"
+          5. Run: npm run build   then   pm2 restart arjuna-portfolio
+          Free tier allows 50 submissions/month. No backend code needed.
+        -->
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fn">Your Name *</label>
+              <input type="text" id="fn" name="name" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label for="fe">Email *</label>
+              <input type="email" id="fe" name="email" placeholder="john@example.com" required/>
+            </div>
+            <div class="form-group full">
+              <label for="fs">Subject *</label>
+              <input type="text" id="fs" name="subject" placeholder="Internship Opportunity / Project Collaboration…" required/>
+            </div>
+            <div class="form-group full">
+              <label for="fm">Message *</label>
+              <textarea id="fm" name="message" rows="5" placeholder="Tell me about the opportunity or question you have…" required></textarea>
+            </div>
+          </div>
+          <input type="hidden" name="_subject" value="New Message — Arjuna Gyan Portfolio"/>
+          <input type="text"   name="_gotcha"  style="display:none"/>
+          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <div id="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FOOTER ============================== -->
+<footer>
+  <!-- TOP: 4-column grid -->
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">Arjuna<span>.</span></div>
+          <p class="footer-tagline">
+            Junior Software Engineer &amp; NPCC Mauritius 2026 Finalist. Building impactful digital
+            products — from fintech dashboards to AI-driven platforms.
+            Open for a <strong style="color:var(--green);">6-month internship.</strong>
+          </p>
+          <div class="footer-social">
+            <a href="https://linkedin.com/in/arjunagyan" target="_blank" class="footer-soc-btn" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/arjunagyan" target="_blank" class="footer-soc-btn" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:a.gyan@alustudent.com" class="footer-soc-btn" title="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/23055198492" target="_blank" class="footer-soc-btn" title="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <div class="footer-col-title">Quick Links</div>
+          <nav class="footer-nav">
+            <a href="#about"><i class="fas fa-chevron-right"></i>About Me</a>
+            <a href="#skills"><i class="fas fa-chevron-right"></i>Skills</a>
+            <a href="#projects"><i class="fas fa-chevron-right"></i>Projects</a>
+            <a href="#resume"><i class="fas fa-chevron-right"></i>Resume</a>
+            <a href="#certifications"><i class="fas fa-chevron-right"></i>Certifications</a>
+          </nav>
+        </div>
+
+        <!-- Col 3: Services / Expertise -->
+        <div>
+          <div class="footer-col-title">Expertise</div>
+          <nav class="footer-nav">
+            <a href="#services"><i class="fas fa-chevron-right"></i>Web Development</a>
+            <a href="#services"><i class="fas fa-chevron-right"></i>Fintech Solutions</a>
+            <a href="#services"><i class="fas fa-chevron-right"></i>AI &amp; Data Science</a>
+            <a href="#services"><i class="fas fa-chevron-right"></i>Product Management</a>
+            <a href="#downloads"><i class="fas fa-chevron-right"></i>Download CV</a>
+          </nav>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-contact-list">
+            <div class="footer-ci">
+              <div class="footer-ci-ico"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="footer-ci-text">
+                <div class="footer-ci-lbl">Location</div>
+                <div class="footer-ci-val">Pamplemousses, Mauritius 🇲🇺</div>
+              </div>
+            </div>
+            <div class="footer-ci">
+              <div class="footer-ci-ico"><i class="fas fa-envelope"></i></div>
+              <div class="footer-ci-text">
+                <div class="footer-ci-lbl">Email</div>
+                <div class="footer-ci-val">
+                  <a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-ci">
+              <div class="footer-ci-ico"><i class="fas fa-phone"></i></div>
+              <div class="footer-ci-text">
+                <div class="footer-ci-lbl">Phone / WhatsApp</div>
+                <div class="footer-ci-val">
+                  <a href="tel:+23055198492">+230 5519 8492</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-ci">
+              <div class="footer-ci-ico"><i class="fas fa-calendar-check"></i></div>
+              <div class="footer-ci-text">
+                <div class="footer-ci-lbl">Availability</div>
+                <div class="footer-ci-val" style="color:var(--green);font-weight:600;">Open for 6-month Internship</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM: copyright bar -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-inner">
+        <div class="footer-copy">
+          © 2026 <span>Arjuna Caleb Gyan</span>. All rights reserved.
+          · Built with ❤️ &amp; deployed on <span>Cloudflare Pages</span>.
+        </div>
+        <div class="footer-badge">
+          <span class="footer-badge-dot"></span>
+          Available for Internship
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+
+<!-- ============================== SCRIPTS ============================== -->
+<script src="js/main.js"></script>
+</body>
+</html>
