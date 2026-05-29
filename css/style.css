@@ -162,19 +162,25 @@ section { padding: 100px 0; position: relative; }
    ===================================================== */
 #hero {
   min-height: 100vh;
-  /* Fallback gradient — replaced when hero-bg.jpg is present */
-  background: linear-gradient(160deg, #0d1b2a 0%, #122435 40%, #0f2518 100%);
-  /* To use your own photo: uncomment the two lines below and upload /static/hero-bg.jpg */
-  /* background-image: url('/static/hero-bg.jpg'); */
-  /* background-size: cover; background-position: center top; */
+  /* Background photo — replace hero-bg.jpg in images/ with your own */
+  background-color: #ececec;
+  background-image: url('../images/istockphoto-1075599562-612x612.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
   display: flex; align-items: center;
   position: relative; overflow: hidden;
 }
-/* dark overlay — ensures text is readable over any background photo */
+/* dark overlay — keeps text crisp over any photo */
 #hero::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(160deg, rgba(13,27,42,.88) 0%, rgba(18,36,53,.82) 40%, rgba(15,37,24,.85) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(5, 15, 25, 0.92) 0%,
+    rgba(10, 28, 18, 0.85) 50%,
+    rgba(5, 20, 12, 0.90) 100%
+  );
   pointer-events: none; z-index: 1;
 }
 /* subtle grid pattern */
