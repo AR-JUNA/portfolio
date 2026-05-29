@@ -163,8 +163,13 @@ section { padding: 100px 0; position: relative; }
 #hero {
   min-height: 100vh;
   /* Background photo — replace hero-bg.jpg in images/ with your own */
+<<<<<<< HEAD
   background-color: #ececec;
   background-image: url('../images/istockphoto-1075599562-612x612.jpg');
+=======
+  background-color: #0d1b2a;
+  background-image: url('../images/hero-bg.jpg');
+>>>>>>> 8e04b5db71a59383170d7dd6612f59aee8b25f9e
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
