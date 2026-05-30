@@ -94,27 +94,100 @@ document.querySelectorAll('.proj-filter-btn').forEach(btn => {
   });
 });
 
+/* ---------- Success Popup ---------- */
+function showSuccessPopup(senderName) {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'successOverlay';
+  overlay.innerHTML = `
+    <div class="popup-card">
+      <div class="popup-icon-ring">
+        <div class="popup-icon-circle">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+      <h3 class="popup-title">Message Sent!</h3>
+      <p class="popup-msg">
+        Thank you <strong>${senderName || 'there'}</strong>,<br/>
+        Arjuna will reach out to you soon. 🚀
+      </p>
+      <div class="popup-divider"></div>
+      <p class="popup-sub">
+        <i class="fas fa-envelope" style="color:var(--green);margin-right:6px;"></i>
+        Expect a reply at your email within 24 hours.
+      </p>
+      <button class="popup-close-btn" onclick="closePopup()">
+        <i class="fas fa-times"></i> Close
+      </button>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Animate in
+  requestAnimationFrame(() => {
+    overlay.classList.add('popup-visible');
+  });
+
+  // Auto-close after 7 seconds
+  setTimeout(() => closePopup(), 7000);
+
+  // Close on backdrop click
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closePopup();
+  });
+}
+
+function closePopup() {
+  const overlay = document.getElementById('successOverlay');
+  if (!overlay) return;
+  overlay.classList.remove('popup-visible');
+  overlay.classList.add('popup-hiding');
+  setTimeout(() => overlay.remove(), 400);
+}
+
+// Close with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closePopup();
+});
+
 /* ---------- Contact form ---------- */
-const form   = document.getElementById('contactForm');
+const form    = document.getElementById('contactForm');
 const fstatus = document.getElementById('form-status');
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const btn = form.querySelector('button[type=submit]');
-  const orig = btn.innerHTML;
+  const btn       = form.querySelector('button[type=submit]');
+  const orig      = btn.innerHTML;
+  const nameField = form.querySelector('input[name="name"]');
+  const senderName = nameField ? nameField.value.trim().split(' ')[0] : '';
+
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
-  btn.disabled = true;
-  fstatus.className = ''; fstatus.style.display = 'none';
+  btn.disabled  = true;
+  fstatus.className = '';
+  fstatus.style.display = 'none';
+
   try {
-    const res = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} });
+    const res = await fetch(form.action, {
+      method:  'POST',
+      body:    new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+
     if (res.ok) {
-      fstatus.textContent = '✅ Message sent! Arjuna will reply soon.';
-      fstatus.className = 'ok'; form.reset();
+      form.reset();
+      showSuccessPopup(senderName);  // 🎉 Show the popup
     } else {
-      const j = await res.json().catch(()=>({}));
-      fstatus.textContent = '❌ ' + (j.errors?.map(x=>x.message).join(', ') || 'Something went wrong.');
-      fstatus.className = 'err';
+      const j = await res.json().catch(() => ({}));
+      fstatus.textContent = '❌ ' + (j.errors?.map(x => x.message).join(', ') || 'Something went wrong. Please try again.');
+      fstatus.className   = 'err';
+      fstatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
-  } catch { fstatus.textContent = '❌ Network error. Please try again.'; fstatus.className = 'err'; }
-  btn.innerHTML = orig; btn.disabled = false;
-  fstatus.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  } catch {
+    fstatus.textContent = '❌ Network error. Please check your connection and try again.';
+    fstatus.className   = 'err';
+    fstatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  btn.innerHTML = orig;
+  btn.disabled  = false;
 });
