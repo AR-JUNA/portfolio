@@ -129,7 +129,7 @@ function showSuccessPopup(senderName) {
   });
 
   // Auto-close after 7 seconds
-  setTimeout(() => closePopup(), 3000);
+  setTimeout(() => closePopup(), 7000);
 
   // Close on backdrop click
   overlay.addEventListener('click', (e) => {
