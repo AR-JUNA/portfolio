@@ -1,6 +1,18 @@
 # Arjuna Caleb Gyan — Personal Portfolio
 
-A clean, responsive personal portfolio website built with **pure HTML, CSS, and JavaScript** — no frameworks, no build tools, no Node.js required.
+A **dark editorial** personal portfolio site built with **pure HTML, CSS, and JavaScript** — no frameworks, no build tools, no Node.js required.
+
+## ✨ Design System (2026 Redesign)
+
+- **Distinctive dark-editorial identity** — ink-black canvas (`#08090b`), acid-green accent (`#c3ff4a`), Fraunces serif display + Space Grotesk grotesque sans
+- **Custom AG monogram lockup** — used in navbar, hero watermark, and footer
+- **Cinematic hero section** — grayscale background photo, drifting glow orbs, grid overlay, split-line text reveal, marquee ticker, hero meta stats
+- **Scroll progress system** — top progress bar, a right-side scroll rail with section dots/labels, and a circular progress ring on the back-to-top button
+- **Animated reveal transitions** — fade/rise/slide reveals, image wipe transitions, timeline draw-in, magnetic buttons, custom cursor (desktop)
+- **Asymmetric responsive layouts** — bento-style services grid, alternating case-study project rows, 5/7 & 4/8 column splits throughout
+- **Clearer project storytelling** — each project is a Problem → Approach → Result case study with evidence chips (metrics/outcomes)
+- **Product-style evidence panels** — certification cards with photo backgrounds, verified badges, and featured-award treatment
+- **Stronger internship/contact CTA** — full-width acid-green CTA band above the contact form, plus a "Hire Me" pill in the navbar
 
 ## 🗂️ File Structure
 

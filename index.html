@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Arjuna Caleb Gyan – Software Engineer | NPCC Mauritius 2026 Finalist | Open for 6-month Internship"/>
-<title>Arjuna Gyan | Software Engineer</title>
+<meta name="description" content="Arjuna Caleb Gyan – Software Engineer | NPCC Mauritius 2026 Finalist | Open for 4-6 Month Internship"/>
+<title>Arjuna Gyan — Software Engineer</title>
 
 <!-- Favicon -->
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%2327c96e'/><stop offset='100%25' stop-color='%2318a355'/></linearGradient></defs><rect width='100' height='100' rx='0' fill='url(%23g)'/><text y='.6em' font-size='45' font-family='Montserrat,Arial,sans-serif' font-weight='900' fill='white' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='12'>AG</text></svg>"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%2308090b'/><text y='.58em' font-size='40' font-family='Georgia,serif' font-weight='700' fill='%23c3ff4a' x='50%25' text-anchor='middle' dominant-baseline='hanging' dy='16'>AG</text></svg>"/>
 
-<!-- Google Fonts -->
+<!-- Google Fonts: Fraunces (serif display) + Space Grotesk (grotesque sans) -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <!-- FontAwesome -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css"/>
 
@@ -20,20 +20,51 @@
 </head>
 <body>
 
+<!-- ============================== PRELOADER ============================== -->
+<div id="preloader">
+  <div class="pre-mark">A<span>G</span></div>
+  <div class="pre-bar"></div>
+  <div class="pre-label">Loading Portfolio</div>
+</div>
+
+<!-- ============================== CUSTOM CURSOR ============================== -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- ============================== SCROLL PROGRESS BAR ============================== -->
+<div class="scroll-progress-bar"><div class="scroll-progress-fill" id="scrollFill"></div></div>
+
+<!-- ============================== SCROLL PROGRESS RAIL ============================== -->
+<div class="progress-rail" id="progressRail">
+  <div class="rail-dots">
+    <div class="rail-dot" data-target="#hero"><span class="rail-label">Home</span></div>
+    <div class="rail-dot" data-target="#about"><span class="rail-label">About</span></div>
+    <div class="rail-dot" data-target="#skills"><span class="rail-label">Skills</span></div>
+    <div class="rail-dot" data-target="#projects"><span class="rail-label">Projects</span></div>
+    <div class="rail-dot" data-target="#resume"><span class="rail-label">Resume</span></div>
+    <div class="rail-dot" data-target="#certifications"><span class="rail-label">Certs</span></div>
+    <div class="rail-dot" data-target="#contact"><span class="rail-label">Contact</span></div>
+  </div>
+</div>
+
 <!-- ============================== NAVBAR ============================== -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">Arjuna<span>.</span></a>
+    <a href="#hero" class="nav-logo ag-mark">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <rect x="0.5" y="0.5" width="33" height="33" stroke="#c3ff4a"/>
+        <text x="17" y="23" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#f2f0e9">AG</text>
+      </svg>
+      <span class="ag-mark-text">Arjuna <b>Gyan</b></span>
+    </a>
     <div class="nav-links">
       <a href="#hero"           class="nav-link active">Home</a>
       <a href="#about"          class="nav-link">About</a>
       <a href="#skills"         class="nav-link">Skills</a>
-      <a href="#services"       class="nav-link">Services</a>
-      <a href="#projects"       class="nav-link">Projects</a>
+      <a href="#projects"       class="nav-link">Work</a>
       <a href="#resume"         class="nav-link">Resume</a>
       <a href="#certifications" class="nav-link">Certs</a>
-      <a href="#downloads"      class="nav-link">Downloads</a>
-      <a href="#contact"        class="nav-link">Contact</a>
+      <a href="#contact"        class="nav-link nav-cta"><span class="dot"></span>Hire Me</a>
     </div>
     <div class="hamburger" id="hamburger" onclick="toggleMenu()">
       <span></span><span></span><span></span>
@@ -45,7 +76,7 @@
   <a href="#about"          onclick="closeMenu()">About</a>
   <a href="#skills"         onclick="closeMenu()">Skills</a>
   <a href="#services"       onclick="closeMenu()">Services</a>
-  <a href="#projects"       onclick="closeMenu()">Projects</a>
+  <a href="#projects"       onclick="closeMenu()">Work</a>
   <a href="#resume"         onclick="closeMenu()">Resume</a>
   <a href="#certifications" onclick="closeMenu()">Certifications</a>
   <a href="#downloads"      onclick="closeMenu()">Downloads</a>
@@ -54,42 +85,75 @@
 
 <!-- ============================== HERO ============================== -->
 <section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-watermark">GYAN</div>
   <div class="hero-orb hero-orb-1"></div>
   <div class="hero-orb hero-orb-2"></div>
 
   <div class="hero-inner">
     <div class="hero-content">
 
-      <span class="hero-eyebrow">Welcome to my portfolio</span>
-      <h1 class="hero-title">I'm <span>Arjuna</span> Gyan</h1>
+      <span class="hero-eyebrow">Portfolio — 2026 Edition</span>
+      <h1 class="hero-title">
+        <span class="split-line"><span>Building software</span></span>
+        <span class="split-line"><span>with <em>intent</em> &amp;</span></span>
+        <span class="split-line"><span>impact.</span></span>
+      </h1>
       <p class="hero-role">
         I'm a
         <span id="typed-text"></span>
       </p>
       <p class="hero-desc">
-        Junior Software Engineer &amp; NPCC Mauritius 2026 Finalist. Passionate about
-        building AI-driven solutions, fintech products, and accessible web experiences.
-        Currently based in Pamplemousses, Mauritius 🇲🇺
+        Junior Software Engineer &amp; NPCC Mauritius 2026 Finalist. I design and ship
+        AI-driven products, fintech tools, and accessible web experiences —
+        based in Pamplemousses, Mauritius 🇲🇺.
       </p>
       <div class="hero-btns">
-        <a href="./images/Arjuna_Gyan_Resume.pdf" download class="btn btn-green">
-          <i class="fas fa-download"></i> Download CV
+        <a href="./images/Arjuna_Gyan_Resume.pdf" download class="btn btn-green magnetic">
+          <span><i class="fas fa-download"></i> Download CV</span>
         </a>
-        <a href="#contact" class="btn btn-outline-white">
-          <i class="fas fa-paper-plane"></i> Get In Touch
+        <a href="#contact" class="btn btn-outline-white magnetic">
+          <span><i class="fas fa-arrow-right"></i> Start a Conversation</span>
         </a>
       </div>
 
-      
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="lbl">Status</span>
+          <span class="val acc">Open to Internships</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="lbl">Focus</span>
+          <span class="val">Web · AI · Fintech</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="lbl">Based In</span>
+          <span class="val">Mauritius, GMT+4</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="lbl">Recognition</span>
+          <span class="val">NPCC 2026 Finalist</span>
+        </div>
+      </div>
 
     </div>
   </div>
 
-  <!-- wave bottom -->
-  <div class="hero-wave">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
-    </svg>
+  <div class="hero-scroll-cue"><span>Scroll</span><span class="line"></span></div>
+
+  <div class="hero-ticker">
+    <div class="ticker-track">
+      <span class="ticker-item"><i class="fas fa-circle"></i>Software Engineering</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>AI-Driven Products</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>Fintech Dashboards</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>Product Strategy</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>UX Research</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>Software Engineering</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>AI-Driven Products</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>Fintech Dashboards</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>Product Strategy</span>
+      <span class="ticker-item"><i class="fas fa-circle"></i>UX Research</span>
+    </div>
   </div>
 </section>
 
@@ -98,41 +162,42 @@
   <div class="container">
     <div class="about-grid">
       <!-- Left: profile photo -->
-      <div class="reveal-l">
-        <div class="about-img-wrap">
+      <div class="about-media reveal-l">
+        <div class="about-img-wrap wipe">
+          <span class="about-index">01</span>
           <img
             src="./images/WhatsApp Image 2026-01-25 at 22.11.27.jpeg"
             alt="Arjuna Caleb Gyan"
             class="about-img"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
-          <!-- fallback shown when profile.jpg is missing -->
           <div class="about-img about-img-fallback" style="display:none;">AG</div>
-          <div class="about-img-border"></div>
+        </div>
+        <div class="about-caption">
+          <span><span class="dot"></span>Pamplemousses, Mauritius</span>
+          <span>2026</span>
         </div>
       </div>
       <!-- Right: info -->
       <div class="reveal-r">
-        <div class="section-heading" style="text-align:left;margin-bottom:28px;">
-          <h2>About Me</h2>
-          <div class="divider" style="margin:14px 0 0;"></div>
-        </div>
+        <span class="eyebrow">About Me</span>
         <div class="about-text">
-          <p>I'm a junior software engineer with a strong foundation in web development and a growing expertise in AI-driven solutions. I combine technical skills with a product-thinking mindset developed through real internship experience at PARKLY Innovations Limited.</p>
-          <p>As a <strong>2026 NPCC Mauritius Finalist</strong>, I pitched an AI-based concept for Efficient Businesses &amp; Smart Cities, a testament to my ability to bridge technology and real-world impact. Currently seeking a <strong>4 - 6 month internship</strong> where I can contribute meaningfully.</p>
+          <p class="lede">I'm a junior software engineer with a growing expertise in <em>AI-driven solutions</em> and a product-thinking mindset forged through real internship experience.</p>
+          <p>I combine technical execution with strategic thinking — from writing production code to coordinating stakeholders on fundraising decks. As a <strong>2026 NPCC Mauritius Finalist</strong>, I pitched an AI-based concept for Efficient Businesses &amp; Smart Cities, a testament to my ability to bridge technology and real-world impact.</p>
+          <p>Currently seeking a <strong>4 – 6 month internship</strong> where I can contribute meaningfully to a team building something worth building.</p>
           <hr/>
           <div class="about-info-title">Basic Info</div>
           <ul class="info-list">
-            <li><span class="lbl">Name:</span> Arjuna Caleb Gyan</li>
-            <li><span class="lbl">Location:</span> Pamplemousses, Mauritius 🇲🇺</li>
-            <li><span class="lbl">Email:</span> <a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a></li>
-            <li><span class="lbl">Phone:</span> <a href="tel:+23055198492">+230 5519 8492</a></li>
-            <li><span class="lbl">Degree:</span> BSc. Software Engineering</li>
-            <li><span class="lbl">School:</span> ALCHE, Mauritius</li>
-            <li><span class="lbl">Languages:</span> English · Twi (Native) · French</li>
-            <li><span class="lbl">Availability:</span> Open for 4 - 6 month internship</li>
+            <li><span class="lbl">Name</span> Arjuna Caleb Gyan</li>
+            <li><span class="lbl">Location</span> Pamplemousses, Mauritius 🇲🇺</li>
+            <li><span class="lbl">Email</span> <a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a></li>
+            <li><span class="lbl">Phone</span> <a href="tel:+23055198492">+230 5519 8492</a></li>
+            <li><span class="lbl">Degree</span> BSc. Software Engineering</li>
+            <li><span class="lbl">School</span> ALCHE, Mauritius</li>
+            <li><span class="lbl">Languages</span> English · Twi (Native) · French</li>
+            <li><span class="lbl">Availability</span> 4 – 6 month internship</li>
           </ul>
-          <span class="avail-pill"><span class="avail-dot"></span>Available for Internship (4-6 months)</span>
+          <span class="avail-pill"><span class="avail-dot"></span>Available for Internship (4–6 months)</span>
         </div>
       </div>
     </div>
@@ -143,64 +208,74 @@
 <section id="skills">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>My <span>Skills</span></h2>
-      <div class="divider"></div>
+      <span class="eyebrow">Capabilities</span>
+      <h2>Skills &amp; <span>Toolkit</span></h2>
       <p>A blend of engineering fundamentals, modern web development, data science, and product thinking.</p>
     </div>
 
-    <!-- skill bars -->
-    <div class="skills-bars reveal" id="skillBars">
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">JavaScript, HTML &amp; CSS</span><span class="skill-pct">95%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+    <div class="skills-layout">
+      <!-- skill bars -->
+      <div class="skills-bars reveal" id="skillBars">
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">JavaScript, HTML &amp; CSS</span><span class="skill-pct">95%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Python &amp; C++</span><span class="skill-pct">65%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Git &amp; Version Control</span><span class="skill-pct">75%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Debugging &amp; Testing</span><span class="skill-pct">70%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="70"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">REST API &amp; MySQL</span><span class="skill-pct">60%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Object-Oriented Programming</span><span class="skill-pct">65%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">Data Structures &amp; Algorithms</span><span class="skill-pct">50%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="50"></div></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-meta"><span class="skill-name">AWS Cloud</span><span class="skill-pct">40%</span></div>
+          <div class="skill-track"><div class="skill-fill" data-w="40"></div></div>
+        </div>
       </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">Python &amp; C++</span><span class="skill-pct">65%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">Git &amp; Version Control</span><span class="skill-pct">75%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="75"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">Debugging &amp; Testing</span><span class="skill-pct">70%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="70"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">REST API &amp; MySQL</span><span class="skill-pct">60%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="60"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">Object-Oriented Programming</span><span class="skill-pct">65%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="65"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">Data Structures &amp; Algorithms</span><span class="skill-pct">50%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="50"></div></div>
-      </div>
-      <div class="skill-row">
-        <div class="skill-meta"><span class="skill-name">AWS Cloud</span><span class="skill-pct">40%</span></div>
-        <div class="skill-track"><div class="skill-fill" data-w="40"></div></div>
-      </div>
-    </div>
 
-    <!-- soft skills + tools -->
-    <div class="soft-section reveal">
-      <h3><i class="fas fa-handshake" style="color:var(--green);margin-right:8px;"></i>Soft Skills &amp; Tools</h3>
-      <div class="chips">
-        <span class="chip"><i class="fas fa-users"></i>Team Collaboration</span>
-        <span class="chip"><i class="fas fa-comments"></i>Communication</span>
-        <span class="chip"><i class="fas fa-handshake"></i>Stakeholder Engagement</span>
-        <span class="chip"><i class="fas fa-sync-alt"></i>Agile Collaboration</span>
-        <span class="chip"><i class="fas fa-lightbulb"></i>Problem Solving</span>
-        <span class="chip"><i class="fas fa-chart-line"></i>Market Research</span>
-        <span class="chip"><i class="fab fa-github"></i>GitHub</span>
-        <span class="chip"><i class="fab fa-python"></i>Python</span>
-        <span class="chip"><i class="fab fa-js"></i>JavaScript</span>
-        <span class="chip"><i class="fab fa-html5"></i>HTML5</span>
-        <span class="chip"><i class="fab fa-css3-alt"></i>CSS3</span>
-        <span class="chip"><i class="fab fa-aws"></i>AWS</span>
-        <span class="chip"><i class="fas fa-database"></i>MySQL</span>
+      <!-- soft skills + tools -->
+      <div class="reveal">
+        <div class="soft-section">
+          <h3><i class="fas fa-handshake"></i>Soft Skills &amp; Tools</h3>
+          <div class="chips">
+            <span class="chip"><i class="fas fa-users"></i>Team Collaboration</span>
+            <span class="chip"><i class="fas fa-comments"></i>Communication</span>
+            <span class="chip"><i class="fas fa-handshake"></i>Stakeholder Engagement</span>
+            <span class="chip"><i class="fas fa-sync-alt"></i>Agile Collaboration</span>
+            <span class="chip"><i class="fas fa-lightbulb"></i>Problem Solving</span>
+            <span class="chip"><i class="fas fa-chart-line"></i>Market Research</span>
+            <span class="chip"><i class="fab fa-github"></i>GitHub</span>
+            <span class="chip"><i class="fab fa-python"></i>Python</span>
+            <span class="chip"><i class="fab fa-js"></i>JavaScript</span>
+            <span class="chip"><i class="fab fa-html5"></i>HTML5</span>
+            <span class="chip"><i class="fab fa-css3-alt"></i>CSS3</span>
+            <span class="chip"><i class="fab fa-aws"></i>AWS</span>
+            <span class="chip"><i class="fas fa-database"></i>MySQL</span>
+          </div>
+        </div>
+        <div class="tools-marquee">
+          <div class="tools-track">
+            <span>VS Code</span><span>·</span><span>Figma</span><span>·</span><span>GitHub</span><span>·</span><span>Postman</span><span>·</span><span>Notion</span><span>·</span>
+            <span>VS Code</span><span>·</span><span>Figma</span><span>·</span><span>GitHub</span><span>·</span><span>Postman</span><span>·</span><span>Notion</span><span>·</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -210,40 +285,52 @@
 <section id="services">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>What I <span>Offer</span></h2>
-      <div class="divider"></div>
-      <p>I bring a mix of technical execution and strategic product thinking to every project I work on.</p>
+      <span class="eyebrow">What I Offer</span>
+      <h2>Where I <span>Add Value</span></h2>
+      <p>A mix of technical execution and strategic product thinking, applied to every project I take on.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon"><i class="fas fa-code"></i></div>
-        <h5>Web Development</h5>
-        <p>Building responsive, performant web applications using modern JavaScript, HTML5 &amp; CSS3. From landing pages to full-stack apps.</p>
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">01</span><div class="service-icon"><i class="fas fa-code"></i></div></div>
+        <div>
+          <h5>Web Development</h5>
+          <p>Building responsive, performant web applications using modern JavaScript, HTML5 &amp; CSS3 — from landing pages to full-stack apps.</p>
+        </div>
       </div>
-      <div class="service-card reveal" style="transition-delay:.08s">
-        <div class="service-icon"><i class="fas fa-robot"></i></div>
-        <h5>AI-Driven Solutions</h5>
-        <p>Designing and prototyping AI-based business concepts and smart automation tools, as showcased in the NPCC 2026 challenge.</p>
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">02</span><div class="service-icon"><i class="fas fa-robot"></i></div></div>
+        <div>
+          <h5>AI-Driven Solutions</h5>
+          <p>Prototyping AI business concepts &amp; smart automation, as showcased at NPCC 2026.</p>
+        </div>
       </div>
-      <div class="service-card reveal" style="transition-delay:.16s">
-        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
-        <h5>Data Analytics</h5>
-        <p>Creating dashboards, analytics pipelines, and reports using Python, SQL, and visualisation libraries for actionable insights.</p>
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">03</span><div class="service-icon"><i class="fas fa-chart-bar"></i></div></div>
+        <div>
+          <h5>Data Analytics</h5>
+          <p>Dashboards, pipelines &amp; reports using Python, SQL and visualisation for actionable insight.</p>
+        </div>
       </div>
-      <div class="service-card reveal" style="transition-delay:.24s">
-        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
-        <h5>Product Management</h5>
-        <p>End-to-end product lifecycle: market research, roadmap planning, stakeholder coordination, and investor-facing materials.</p>
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">04</span><div class="service-icon"><i class="fas fa-mobile-alt"></i></div></div>
+        <div>
+          <h5>Product Management</h5>
+          <p>End-to-end product lifecycle: market research, roadmap planning, stakeholder coordination, and investor-facing materials.</p>
+        </div>
       </div>
-      <div class="service-card reveal" style="transition-delay:.32s">
-        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
-        <h5>UI/UX Design</h5>
-        <p>User-centred interface design with a focus on accessibility and intuitive flows, grounded in Meta's UX/UI design principles.</p>
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">05</span><div class="service-icon"><i class="fas fa-paint-brush"></i></div></div>
+        <div>
+          <h5>UI/UX Design</h5>
+          <p>User-centred design focused on accessibility and intuitive flows, grounded in Meta's UX/UI principles.</p>
+        </div>
       </div>
-      <div class="service-card reveal" style="transition-delay:.4s">
-        <div class="service-icon"><i class="fas fa-handshake"></i></div>
-        <h5>Freelance Dev &amp; Consulting</h5>
-        <p>Helping small businesses and startups define and build their digital products iteratively, reducing rework through continuous feedback.</p>
+      <div class="service-card">
+        <div class="service-top"><span class="service-num">06</span><div class="service-icon"><i class="fas fa-handshake"></i></div></div>
+        <div>
+          <h5>Freelance &amp; Consulting</h5>
+          <p>Helping startups define and build digital products iteratively, reducing rework through continuous feedback.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -254,21 +341,17 @@
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
-        <i class="fas fa-folder-open"></i>
         <div class="stat-num"><span id="c1" data-target="6">0</span><span>+</span></div>
         <div class="stat-lbl">Projects Built</div>
       </div>
       <div class="stat-item reveal" style="transition-delay:.08s">
-        <i class="fas fa-users"></i>
         <div class="stat-num"><span id="c2" data-target="5">0</span><span>+</span></div>
         <div class="stat-lbl">Clients Served</div>
       </div>
       <div class="stat-item reveal" style="transition-delay:.16s">
-        <i class="fas fa-certificate"></i>
         <div class="stat-num"><span id="c3" data-target="8">0</span></div>
         <div class="stat-lbl">Certifications</div>
       </div>
-
     </div>
   </div>
 </section>
@@ -277,40 +360,53 @@
 <section id="projects">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>My <span>Projects</span></h2>
-      <div class="divider"></div>
-      <p>From fintech dashboards to AI concepts and education platforms — here's what I've shipped.</p>
+      <span class="eyebrow">Selected Work</span>
+      <h2>Case <span>Studies</span></h2>
+      <p>From fintech dashboards to AI concepts and education platforms — here's what I've shipped, and why it mattered.</p>
     </div>
     <!-- Filter -->
     <div class="proj-filter reveal">
-      <button class="proj-filter-btn active" data-f="all">All</button>
+      <button class="proj-filter-btn active" data-f="all">All Work</button>
       <button class="proj-filter-btn" data-f="fintech">Fintech</button>
       <button class="proj-filter-btn" data-f="webdev">Web Dev</button>
       <button class="proj-filter-btn" data-f="aiml">AI / ML</button>
       <button class="proj-filter-btn" data-f="education">Education</button>
       <button class="proj-filter-btn" data-f="product">Product</button>
     </div>
-    <!-- Grid -->
-    <div class="proj-grid reveal" style="transition-delay:.1s">
+    <!-- List -->
+    <div class="proj-list">
 
       <!-- PROJECT 1: MoMo Dashboard -->
-      <div class="proj-card" data-cat="fintech">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
-          <img src="images/proj-momo.jpg" alt="MoMo Dashboard screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">💳</span>
-          <span class="proj-cat-tag">Fintech</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA/momo-transaction-tracker.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reveal" data-cat="fintech">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#1a2f22,#0f1a13);">
+            <img src="images/proj-momo.jpg" alt="MoMo Dashboard screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">💳</span>
+            <span class="proj-cat-tag">Fintech</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA/momo-transaction-tracker.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
+          <span class="proj-index">Case 01 — Fintech</span>
           <div class="proj-title"><a href="https://github.com/AR-JUNA/momo-transaction-tracker.git" target="_blank">MoMo Transaction Analytics Dashboard</a></div>
-          <div class="proj-sub">Real-time mobile money dashboard — filtering, tracking &amp; anomaly reporting.</div>
+          <p class="proj-sub">A real-time mobile-money analytics dashboard built to help everyday users understand where their money goes.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>Mobile money users had no way to visualise spending patterns or catch suspicious transactions quickly.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Built a JS front-end consuming a REST API, with Chart.js visualisations and rule-based anomaly flags.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Delivered filterable, real-time tracking with clear anomaly reporting for faster financial decisions.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">Real-time</span><span class="ev-lbl">Data Sync</span></div>
+            <div class="evidence-chip"><span class="ev-num">3+</span><span class="ev-lbl">Filter Views</span></div>
+            <div class="evidence-chip"><span class="ev-num">100%</span><span class="ev-lbl">Client-side</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">JavaScript</span>
             <span class="ptag">REST API</span>
-            <span class="ptag">Charts.js</span>
+            <span class="ptag">Chart.js</span>
           </div>
           <div class="proj-actions">
             <a href="https://github.com/AR-JUNA/momo-transaction-tracker.git" target="_blank" class="proj-btn proj-btn-gh">
@@ -321,19 +417,31 @@
       </div>
 
       <!-- PROJECT 2: TechPath Finder -->
-      <div class="proj-card" data-cat="webdev">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#d1fae5,#a7f3d0);">
-          <img src="images/proj-techpath.jpg" alt="TechPath Finder screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">🧭</span>
-          <span class="proj-cat-tag">Web Dev</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA/TechPath-Finder.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reverse reveal" data-cat="webdev">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#12261c,#0c1712);">
+            <img src="images/proj-techpath.jpg" alt="TechPath Finder screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">🧭</span>
+            <span class="proj-cat-tag">Web Dev</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA/TechPath-Finder.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
+          <span class="proj-index">Case 02 — Web Dev</span>
           <div class="proj-title"><a href="https://github.com/AR-JUNA/TechPath-Finder.git" target="_blank">TechPath Finder</a></div>
-          <div class="proj-sub">Interactive career assessment platform with dynamic quiz logic and personalised recommendations.</div>
+          <p class="proj-sub">An interactive career-assessment platform that recommends tech paths based on dynamic quiz logic.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>Students entering tech had no lightweight way to explore which specialisation matched their interests.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Designed branching quiz logic in vanilla JS with weighted scoring and instant personalised results.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Shipped a fully responsive, zero-dependency tool live on GitHub Pages.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">0</span><span class="ev-lbl">Dependencies</span></div>
+            <div class="evidence-chip"><span class="ev-num">Live</span><span class="ev-lbl">Demo Shipped</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">HTML5</span>
             <span class="ptag">CSS3</span>
@@ -351,19 +459,31 @@
       </div>
 
       <!-- PROJECT 3: Edu Access -->
-      <div class="proj-card" data-cat="education">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#fde8ff,#f5d0fe);">
-          <img src="images/proj-eduaccess.jpg" alt="Edu Access screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">📚</span>
-          <span class="proj-cat-tag">Education</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA/edu-access.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reveal" data-cat="education">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#231a2c,#150f19);">
+            <img src="images/proj-eduaccess.jpg" alt="Edu Access screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">📚</span>
+            <span class="proj-cat-tag">Education</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA/edu-access.git" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
+          <span class="proj-index">Case 03 — Education</span>
           <div class="proj-title"><a href="https://github.com/AR-JUNA/edu-access.git" target="_blank">Edu Access</a></div>
-          <div class="proj-sub">Accessibility-focused educational landing page for a non-profit — lowering barriers to quality learning.</div>
+          <p class="proj-sub">An accessibility-focused landing page built for a non-profit lowering barriers to quality learning.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>The non-profit's existing page failed basic accessibility checks and excluded screen-reader users.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Rebuilt semantic HTML with ARIA roles, keyboard navigation, and high-contrast typography.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Delivered a WCAG-conscious page live on GitHub Pages, ready for the organisation's outreach campaign.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">WCAG</span><span class="ev-lbl">Conscious</span></div>
+            <div class="evidence-chip"><span class="ev-num">Live</span><span class="ev-lbl">Demo Shipped</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">HTML5</span>
             <span class="ptag">Accessibility</span>
@@ -381,19 +501,31 @@
       </div>
 
       <!-- PROJECT 4: NPCC AI Concept -->
-      <div class="proj-card" data-cat="aiml">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#fef3c7,#fde68a);">
-          <img src="images/proj-npcc.jpg" alt="NPCC AI Concept screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">🤖</span>
-          <span class="proj-cat-tag">AI / ML</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reverse reveal" data-cat="aiml">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#2c2412,#19140b);">
+            <img src="images/proj-npcc.jpg" alt="NPCC AI Concept screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">🤖</span>
+            <span class="proj-cat-tag">AI / ML</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
-          <div class="proj-title"><a href="#">AI Business Concept — NPCC 2026</a></div>
-          <div class="proj-sub">AI solution for Efficient Businesses &amp; Smart Cities. Finalist in the NPCC Mauritius Challenge 2026. 🏆</div>
+          <span class="proj-index">Case 04 — AI Strategy</span>
+          <div class="proj-title"><a href="#">AI Business Concept — NPCC 2026 🏆</a></div>
+          <p class="proj-sub">A finalist AI solution for Efficient Businesses &amp; Smart Cities at the NPCC Mauritius Challenge 2026.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>Mauritian SMEs lacked accessible AI tools to optimise operations for a smart-city future.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Researched market gaps and pitched an AI-driven automation concept with a clear business model.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Advanced to the National finals, recognised as one of the most polished concepts by judges.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">Finalist</span><span class="ev-lbl">NPCC 2026</span></div>
+            <div class="evidence-chip"><span class="ev-num">National</span><span class="ev-lbl">Stage Pitch</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">AI Strategy</span>
             <span class="ptag">Smart Cities</span>
@@ -411,19 +543,30 @@
       </div>
 
       <!-- PROJECT 5: CWAS -->
-      <div class="proj-card" data-cat="aiml">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#ede9fe,#ddd6fe);">
-          <img src="images/proj-cwas.jpg" alt="CWAS AIE Startups screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">🚀</span>
-          <span class="proj-cat-tag">AI / ML</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reveal" data-cat="aiml">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#221933,#140e1f);">
+            <img src="images/proj-cwas.jpg" alt="CWAS AIE Startups screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">🚀</span>
+            <span class="proj-cat-tag">AI / ML</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
+          <span class="proj-index">Case 05 — Research</span>
           <div class="proj-title"><a href="#">CWAS — AIE Startups</a></div>
-          <div class="proj-sub">Certificate of Achievement project — AI applications for boosting NexGen Entrepreneurs.</div>
+          <p class="proj-sub">A Certificate of Achievement project exploring AI applications for boosting NexGen entrepreneurs.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>Early-stage entrepreneurs needed a clearer framework for adopting AI in their startup workflows.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Researched applied AI use cases across NexGen startup categories and documented findings.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Earned Certificate of Achievement from NPCC Mauritius for research quality and clarity.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">Certified</span><span class="ev-lbl">NPCC Mauritius</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">AI</span>
             <span class="ptag">Entrepreneurship</span>
@@ -438,19 +581,31 @@
       </div>
 
       <!-- PROJECT 6: PARKLY -->
-      <div class="proj-card" data-cat="product">
-        <div class="proj-thumb" style="background:linear-gradient(135deg,#ccfbf1,#99f6e4);">
-          <img src="images/proj-parkly.jpg" alt="PARKLY Parking Platform screenshot"
-               onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
-          <span class="proj-emoji">🅿️</span>
-          <span class="proj-cat-tag">Product</span>
-          <div class="proj-overlay">
-            <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+      <div class="proj-card reverse reveal" data-cat="product">
+        <div class="proj-media wipe">
+          <div class="proj-thumb" style="background:linear-gradient(135deg,#0d2925,#081613);">
+            <img src="images/proj-parkly.jpg" alt="PARKLY Parking Platform screenshot"
+                 onerror="this.style.display='none';this.parentElement.querySelector('.proj-emoji').style.display='block';" />
+            <span class="proj-emoji" style="display:none;">🅿️</span>
+            <span class="proj-cat-tag">Product</span>
+            <div class="proj-overlay">
+              <a href="https://github.com/AR-JUNA" target="_blank" title="View on GitHub"><i class="fab fa-github"></i></a>
+            </div>
           </div>
         </div>
         <div class="proj-body">
+          <span class="proj-index">Case 06 — Product</span>
           <div class="proj-title"><a href="#">PARKLY — Parking Tech Platform</a></div>
-          <div class="proj-sub">Led UX research &amp; reservation flow improvements. Raised $7K+ in investor funding.</div>
+          <p class="proj-sub">Led UX research and reservation-flow improvements as Product Manager Intern.</p>
+          <div class="proj-story">
+            <div class="proj-story-row"><b>Problem</b><span>Users abandoned the parking reservation flow due to friction and unclear stakeholder alignment.</span></div>
+            <div class="proj-story-row"><b>Approach</b><span>Ran UX research, coordinated stakeholders with La Plage Factory, and supported investor fundraising.</span></div>
+            <div class="proj-story-row"><b>Result</b><span>Raised $7K+ in investor funding and lifted user engagement by 40% post-optimisation.</span></div>
+          </div>
+          <div class="proj-evidence">
+            <div class="evidence-chip"><span class="ev-num">$7K+</span><span class="ev-lbl">Raised</span></div>
+            <div class="evidence-chip"><span class="ev-num">+40%</span><span class="ev-lbl">Engagement</span></div>
+          </div>
           <div class="proj-tags">
             <span class="ptag">Product Mgmt</span>
             <span class="ptag">UX Research</span>
@@ -475,9 +630,9 @@
 <section id="resume">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>My <span>Resume</span></h2>
-      <div class="divider"></div>
-      <p>Education background and professional experience that shaped who I am today.</p>
+      <span class="eyebrow">Journey So Far</span>
+      <h2>Education &amp; <span>Experience</span></h2>
+      <p>The background and professional experience that shaped who I am today.</p>
     </div>
     <div class="resume-grid">
       <!-- Education -->
@@ -560,97 +715,104 @@
 <section id="certifications">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>Credentials &amp; <span>Certifications</span></h2>
-      <div class="divider"></div>
+      <span class="eyebrow">Credentials</span>
+      <h2>Verified <span>Achievements</span></h2>
       <p>Continuous learning across AI, data science, cloud, and UX design.</p>
     </div>
-    <div class="certs-grid">
+    <div class="certs-grid reveal">
 
   <!-- NPCC Mauritius - Featured -->
-  <div class="cert-card featured reveal" style="padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/Logo-NPCC-2018-png.png" alt="NPCC Mauritius" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">NPCC Mauritius</div>
-      <div class="cert-title" style="color: #ffffff;">Certificate of Achievement — CWAS / AIE Startups: Boosting NexGen Entrepreneurs</div>
-      <div class="cert-date" style="color: rgba(255,255,255,0.7);">May 2026</div>
-      <span class="cert-feat" style="color: #ffd700;">⭐ Featured Award</span>
+  <div class="cert-card featured">
+    <div class="cert-media"><img src="./images/Logo-NPCC-2018-png.png" alt="NPCC Mauritius"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">NPCC Mauritius</div>
+      <div class="cert-title">Certificate of Achievement — CWAS / AIE Startups: Boosting NexGen Entrepreneurs</div>
+      <div class="cert-date">May 2026</div>
+      <span class="cert-feat">★ Featured Award</span>
     </div>
   </div>
 
   <!-- WorldQuant University -->
-  <div class="cert-card reveal" style="transition-delay:.06s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/1721098765011.png" alt="WorldQuant University" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">WorldQuant University</div>
-      <div class="cert-title" style="color: #ffffff;">Applied Data Science Lab</div>
-      <div class="cert-date" style="color: rgba(255,255,255,0.7);">2026</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/1721098765011.png" alt="WorldQuant University"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">WorldQuant University</div>
+      <div class="cert-title">Applied Data Science Lab</div>
+      <div class="cert-date">2026</div>
     </div>
   </div>
 
   <!-- Amazon -->
-  <div class="cert-card reveal" style="transition-delay:.12s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/Amazon.png" alt="Amazon" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">Amazon</div>
-      <div class="cert-title" style="color: #ffffff;">Introduction to Software Development</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/Amazon.png" alt="Amazon"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">Amazon</div>
+      <div class="cert-title">Introduction to Software Development</div>
     </div>
   </div>
 
   <!-- ALX Africa -->
-  <div class="cert-card reveal" style="transition-delay:.18s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/alx.png" alt="ALX Africa" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">ALX Africa</div>
-      <div class="cert-title" style="color: #ffffff;">AICE — AI Career Essentials</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/alx.png" alt="ALX Africa"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">ALX Africa</div>
+      <div class="cert-title">AICE — AI Career Essentials</div>
     </div>
   </div>
 
   <!-- IBM - SQL -->
-  <div class="cert-card reveal" style="transition-delay:.24s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/ibm.png" alt="IBM" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">IBM</div>
-      <div class="cert-title" style="color: #ffffff;">Databases and SQL for Data Science with Python</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/ibm.png" alt="IBM"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">IBM</div>
+      <div class="cert-title">Databases and SQL for Data Science with Python</div>
     </div>
   </div>
 
   <!-- Meta -->
-  <div class="cert-card reveal" style="transition-delay:.30s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/meta.jpg" alt="Meta" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">Meta</div>
-      <div class="cert-title" style="color: #ffffff;">Principles of UX/UI Design</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/meta.jpg" alt="Meta"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">Meta</div>
+      <div class="cert-title">Principles of UX/UI Design</div>
     </div>
   </div>
 
   <!-- IBM - Generative AI -->
-  <div class="cert-card reveal" style="transition-delay:.36s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/ibm.png" alt="IBM" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">IBM</div>
-      <div class="cert-title" style="color: #ffffff;">Generative AI for Data Engineering</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/ibm.png" alt="IBM"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">IBM</div>
+      <div class="cert-title">Generative AI for Data Engineering</div>
     </div>
   </div>
 
   <!-- Outskill -->
-  <div class="cert-card reveal" style="transition-delay:.42s; padding: 0; overflow: hidden; position: relative; min-height: 220px;">
-    <img src="./images/692953aa60ae20ce6dee7439_Outskill.png" alt="Outskill" style="width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0;">
-    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.3) 100%);"></div>
-    <div style="position: relative; z-index: 1; padding: 1.2rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 220px;">
-      <div class="cert-org" style="color: #00e676;">Outskill</div>
-      <div class="cert-title" style="color: #ffffff;">Generative AI Mastermind</div>
+  <div class="cert-card">
+    <div class="cert-media"><img src="./images/692953aa60ae20ce6dee7439_Outskill.png" alt="Outskill"></div>
+    <div class="cert-scrim"></div>
+    <span class="cert-verified"><i class="fas fa-check-circle"></i> Verified</span>
+    <div class="cert-body">
+      <div class="cert-org">Outskill</div>
+      <div class="cert-title">Generative AI Mastermind</div>
     </div>
   </div>
 
 </div>
- 
     </div>
   </div>
 </section>
@@ -659,39 +821,32 @@
 <section id="downloads">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>Download <span>Documents</span></h2>
-      <div class="divider"></div>
+      <span class="eyebrow">Documents</span>
+      <h2>Download <span>Materials</span></h2>
       <p>Get Arjuna's CV and support letter — updated June 2026.</p>
     </div>
-    <div class="downloads-grid">
-      <div class="dl-card reveal">
+    <div class="downloads-grid reveal">
+      <div class="dl-card">
+        <span class="dl-index">Doc 01</span>
         <div class="dl-icon-wrap"><i class="fas fa-file-pdf"></i></div>
         <h4>Curriculum Vitae</h4>
         <p>Full resume: education, experience, skills, projects &amp; certifications. Updated June 2026.</p>
         <div class="dl-btns">
-          <a href="./images/Arjuna_Gyan_Resume.pdf" target="_blank" class="btn btn-outline-green">
-            <i class="fas fa-eye"></i> View CV
-          </a>
-          <a href="./images/Arjuna_Gyan_Resume.pdf" download class="btn btn-green">
-            <i class="fas fa-download"></i> Download
-          </a>
+          <a href="./images/Arjuna_Gyan_Resume.pdf" target="_blank" class="btn btn-outline-green"><span><i class="fas fa-eye"></i> View</span></a>
+          <a href="./images/Arjuna_Gyan_Resume.pdf" download class="btn btn-green"><span><i class="fas fa-download"></i> Download</span></a>
         </div>
       </div>
-      <div class="dl-card reveal" style="transition-delay:.1s">
-        <div class="dl-icon-wrap" style="background:rgba(39,201,110,.1);"><i class="fas fa-file-alt" style="color:var(--green);"></i></div>
+      <div class="dl-card">
+        <span class="dl-index">Doc 02</span>
+        <div class="dl-icon-wrap"><i class="fas fa-file-alt"></i></div>
         <h4>Support Letter</h4>
         <p>Official academic support letter from ALCHE endorsing Arjuna's internship application.</p>
         <div class="dl-btns">
-          <a href="./images/Support Letter.pdf" target="_blank" class="btn btn-outline-green">
-            <i class="fas fa-eye"></i> View Letter
-          </a>
-          <a href="./images/Support Letter.pdf" download class="btn btn-green">
-            <i class="fas fa-download"></i> Download
-          </a>
+          <a href="./images/Support Letter.pdf" target="_blank" class="btn btn-outline-green"><span><i class="fas fa-eye"></i> View</span></a>
+          <a href="./images/Support Letter.pdf" download class="btn btn-green"><span><i class="fas fa-download"></i> Download</span></a>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -699,9 +854,9 @@
 <section id="testimonials">
   <div class="container">
     <div class="section-heading reveal" style="margin-bottom:50px;">
-      <h2 style="color:#fff;">What People <span>Say</span></h2>
-      <div class="divider"></div>
-      <p style="color:rgba(255,255,255,.6);">Feedback from colleagues, clients, and mentors.</p>
+      <span class="eyebrow">Testimonials</span>
+      <h2>What People <span>Say</span></h2>
+      <p>Feedback from colleagues, clients, and mentors.</p>
     </div>
   </div>
   <div class="testi-track-wrap">
@@ -778,17 +933,31 @@
   </div>
 </section>
 
+<!-- ============================== CTA BAND ============================== -->
+<section id="cta-band">
+  <div class="container cta-band-inner">
+    <div class="cta-band-left">
+      <div class="cta-eyebrow"><span class="dot"></span>Open for a 4 – 6 Month Internship</div>
+      <h2>Let's build something worth <em>shipping</em>, together.</h2>
+    </div>
+    <div class="cta-band-right">
+      <a href="#contact" class="cta-btn-dark"><i class="fas fa-paper-plane"></i> Start the Conversation</a>
+      <a href="./images/Arjuna_Gyan_Resume.pdf" download class="cta-btn-outline"><i class="fas fa-download"></i> Download CV</a>
+    </div>
+  </div>
+</section>
+
 <!-- ============================== CONTACT ============================== -->
 <section id="contact">
   <div class="container">
     <div class="section-heading reveal">
-      <h2>Get In <span>Touch</span></h2>
-      <div class="divider"></div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Let's <span>Talk</span></h2>
       <p>Have an internship opportunity, project idea, or just want to say hello? I'd love to hear from you.</p>
     </div>
     <div class="contact-grid">
       <!-- Left info -->
-      <div class="reveal-l">
+      <div class="reveal-l contact-info">
         <h3>Contact Info</h3>
         <div class="ci-item">
           <div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div>
@@ -811,11 +980,11 @@
             <div class="ci-val"><a href="mailto:a.gyan@alustudent.com">a.gyan@alustudent.com</a></div>
           </div>
         </div>
-        <div class="ci-item">
+        <div class="ci-item" style="border-bottom:none;">
           <div class="ci-ico"><i class="fas fa-calendar-check"></i></div>
           <div>
             <div class="ci-lbl">Availability</div>
-            <div class="ci-val" style="color:var(--green);font-weight:700;">Open for 4 - 6 month Internship</div>
+            <div class="ci-val" style="color:var(--acid);">Open for 4 - 6 month Internship</div>
           </div>
         </div>
         <!-- Social -->
@@ -861,8 +1030,8 @@
           </div>
           <input type="hidden" name="_subject" value="New Message — Arjuna Gyan Portfolio"/>
           <input type="text"   name="_gotcha"  style="display:none"/>
-          <button type="submit" class="btn btn-green" style="width:100%;justify-content:center;">
-            <i class="fas fa-paper-plane"></i> Send Message
+          <button type="submit" class="btn btn-green magnetic">
+            <span><i class="fas fa-paper-plane"></i> Send Message</span>
           </button>
           <div id="form-status"></div>
         </form>
@@ -880,11 +1049,17 @@
 
         <!-- Col 1: Brand -->
         <div class="footer-brand">
-          <div class="footer-logo">Arjuna<span>.</span></div>
+          <a href="#hero" class="footer-logo ag-mark">
+            <svg width="38" height="38" viewBox="0 0 34 34" fill="none">
+              <rect x="0.5" y="0.5" width="33" height="33" stroke="#c3ff4a"/>
+              <text x="17" y="23" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#f2f0e9">AG</text>
+            </svg>
+            <span class="ag-mark-text" style="font-size:1.3rem;">Arjuna <b>Gyan</b></span>
+          </a>
           <p class="footer-tagline">
             Junior Software Engineer &amp; NPCC Mauritius 2026 Finalist. Building impactful digital
             products — from fintech dashboards to AI-driven platforms.
-            Open for a <strong style="color:var(--green);">4 - 6 month internship.</strong>
+            Open for a <strong style="color:var(--acid);">4 - 6 month internship.</strong>
           </p>
           <div class="footer-social">
             <a href="https://www.linkedin.com/in/gyanarjuna0/" target="_blank" class="footer-soc-btn" title="LinkedIn">
@@ -959,7 +1134,7 @@
               <div class="footer-ci-ico"><i class="fas fa-calendar-check"></i></div>
               <div class="footer-ci-text">
                 <div class="footer-ci-lbl">Availability</div>
-                <div class="footer-ci-val" style="color:var(--green);font-weight:600;">Open for 4 - 6 month Internship</div>
+                <div class="footer-ci-val" style="color:var(--acid);">Open for 4 - 6 month Internship</div>
               </div>
             </div>
           </div>
@@ -975,7 +1150,6 @@
       <div class="footer-bottom-inner">
         <div class="footer-copy">
           © 2026 <span>Arjuna Caleb Gyan</span>. All rights reserved.
-          </span>
         </div>
         <div class="footer-badge">
           <span class="footer-badge-dot"></span>
@@ -988,6 +1162,9 @@
 
 <!-- Back to top -->
 <button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">
+  <svg width="56" height="56" viewBox="0 0 56 56">
+    <circle cx="28" cy="28" r="25" stroke-dasharray="157" stroke-dashoffset="157" id="backTopRing"/>
+  </svg>
   <i class="fas fa-arrow-up"></i>
 </button>
 
